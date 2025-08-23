@@ -51,6 +51,9 @@ dependencies {
 	// dependencies
 	modImplementation("net.fabricmc.fabric-api:fabric-api:$fabric_api_version")
 
+    modImplementation("net.kyrptonaught:customportalapi:$portalapi_version")
+    include("net.kyrptonaught:customportalapi:$portalapi_version")
+
 	// Create - dependencies are added transitively
 	modImplementation("com.simibubi.create:create-fabric-$minecraft_version:$create_version")
 
