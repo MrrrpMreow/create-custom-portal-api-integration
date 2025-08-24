@@ -2,13 +2,14 @@
   "schemaVersion": 1,
   "id": "createcustomportalapiintegration",
   "version": "${version}",
-  "name": "Create Custom Portal API Integration",
-  "description": "A compatibility mod between Create's trains and customportalapi's portals.",
+  "name": "Create Custom Portal API Integration 1.20.1 Port",
+  "description": "A compatibility mod between Create's trains and customportalapi's portals. Now for 1.20.1!",
   "authors": [
-    "ReignOfFROZE"
+    "ReignOfFROZE",
+    "Damienne"
   ],
   "contact": {
-    "sources": "https://github.com/Fabricators-of-Create/create-fabric-addon-template"
+    "sources": "https://github.com/MrrrpMreow/create-custom-portal-api-integration"
   },
   "license": "CC0",
   "icon": "assets/createcustomportalapiintegration/icon.png",
