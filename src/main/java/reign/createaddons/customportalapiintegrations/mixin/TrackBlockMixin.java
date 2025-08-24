@@ -1,6 +1,6 @@
 package reign.createaddons.customportalapiintegrations.mixin;
 
-import net.minecraft.util.math.random.Random;
+import net.minecraft.util.RandomSource;
 
 import com.google.common.base.Predicates;
 import com.simibubi.create.content.contraptions.glue.SuperGlueEntity;
