@@ -149,13 +149,12 @@ public abstract class TrackBlockMixin {
 
 		MinecraftServer minecraftserver = level.getServer();
 		ServerLevel otherLevel = null;
-        Hashtable<PortalLink> dims = CustomPortalApiRegistry.getAllPortalLinks();
 		if(portalState.getBlock() instanceof NetherPortalBlock) {
 			ResourceKey<Level> resourcekey = level.dimension() == Level.NETHER ? Level.OVERWORLD : Level.NETHER;
 			otherLevel = minecraftserver.getLevel(resourcekey);
 		} else {
 			PortalLink link = CustomPortalApiRegistry.getPortalLinkFromBase(((CustomPortalBlock)portalState.getBlock()).getPortalBase(level, portalPos));
-			ResourceKey<Level> resourcekey = level.dimension() == dims.get(link.dimID) ? dims.get(link.returnDimID) : dims.get(link.dimID);;
+			ResourceKey<Level> resourcekey = level.dimension() == link.dimID ? link.returnDimID : link.dimID;;
 			otherLevel = minecraftserver.getLevel(resourcekey);
 		}
 		if (otherLevel == null)
