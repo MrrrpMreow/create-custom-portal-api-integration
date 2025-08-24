@@ -155,7 +155,7 @@ public abstract class TrackBlockMixin {
 			otherLevel = minecraftserver.getLevel(resourcekey);
 		} else {
 			PortalLink link = CustomPortalApiRegistry.getPortalLinkFromBase(((CustomPortalBlock)portalState.getBlock()).getPortalBase(level, portalPos));
-			ResourceKey<Level> resourcekey = level.dimension() == CustomPortalsMod.dims.get(link.dimID) ? CustomPortalsMod.dims.get(link.returnDimID) : CustomPortalsMod.dims.get(link.dimID);;
+			ResourceKey<Level> resourcekey = level.dimension() == dims.get(link.dimID) ? dims.get(link.returnDimID) : dims.get(link.dimID);;
 			otherLevel = minecraftserver.getLevel(resourcekey);
 		}
 		if (otherLevel == null)
