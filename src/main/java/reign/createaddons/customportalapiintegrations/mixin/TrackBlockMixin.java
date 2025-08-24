@@ -174,7 +174,7 @@ public abstract class TrackBlockMixin {
 		if (portalinfo == null)
 			return null;
 
-		BlockPos otherPortalPos = new BlockPos(portalinfo.pos);
+		BlockPos otherPortalPos = new BlockPos.containing(portalinfo.pos);
 		BlockState otherPortalState = otherLevel.getBlockState(otherPortalPos);
 		if (!(otherPortalState.getBlock() instanceof NetherPortalBlock) && !(otherPortalState.getBlock() instanceof CustomPortalBlock))
 			return null;
