@@ -51,6 +51,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockBehaviour.BlockStateBase;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 
@@ -91,9 +92,8 @@ public abstract class TrackBlockMixin {
 			ServerLevel otherLevel = otherSide.getFirst();
 			BlockFace otherTrack = otherSide.getSecond();
 			BlockPos otherTrackPos = otherTrack.getPos();
-			BlockState existing = otherLevel.getBlockState(otherTrackPos);
-			if(!existing.Properties()
-					.replaceable()) {
+			BlockStateBase existing = otherLevel.getBlock(otherTrackPos);
+			if(!existing.isSolid()) {
 				fail = "blocked";
 				failPos = otherTrackPos;
 				continue;
