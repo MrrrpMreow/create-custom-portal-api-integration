@@ -48,6 +48,7 @@ import com.simibubi.create.content.trains.track.TrackPropagator;
 import com.simibubi.create.content.trains.track.TrackShape;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.BlockPos.containing;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
