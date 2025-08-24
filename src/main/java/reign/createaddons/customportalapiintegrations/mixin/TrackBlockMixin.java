@@ -90,7 +90,7 @@ public abstract class TrackBlockMixin {
 			ServerLevel otherLevel = otherSide.getFirst();
 			BlockFace otherTrack = otherSide.getSecond();
 			BlockPos otherTrackPos = otherTrack.getPos();
-			BlockBehaviour existing = otherLevel.getBlockState(otherTrackPos);
+			BlockState existing = otherLevel.getBlockState(otherTrackPos);
 			if(!existing.Properties()
 					.replaceable()) {
 				fail = "blocked";
@@ -149,6 +149,7 @@ public abstract class TrackBlockMixin {
 
 		MinecraftServer minecraftserver = level.getServer();
 		ServerLevel otherLevel = null;
+        Hashtable<PortalLink> dims = CustomPortalApiRegistry.getAllPortalLinks();
 		if(portalState.getBlock() instanceof NetherPortalBlock) {
 			ResourceKey<Level> resourcekey = level.dimension() == Level.NETHER ? Level.OVERWORLD : Level.NETHER;
 			otherLevel = minecraftserver.getLevel(resourcekey);
