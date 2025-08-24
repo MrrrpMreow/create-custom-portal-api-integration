@@ -48,7 +48,6 @@ import com.simibubi.create.content.trains.track.TrackPropagator;
 import com.simibubi.create.content.trains.track.TrackShape;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.BlockPos.containing;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -174,8 +173,9 @@ public abstract class TrackBlockMixin {
 		}
 		if (portalinfo == null)
 			return null;
-
-		BlockPos otherPortalPos = new BlockPos.containing(portalinfo.pos);
+        
+        BlockPos roundedDownPortalPos = BlockPos.containing(portalinfo.pos)
+		BlockPos otherPortalPos = new BlockPos(roundedDownPortalPos);
 		BlockState otherPortalState = otherLevel.getBlockState(otherPortalPos);
 		if (!(otherPortalState.getBlock() instanceof NetherPortalBlock) && !(otherPortalState.getBlock() instanceof CustomPortalBlock))
 			return null;
