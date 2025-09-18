@@ -134,6 +134,8 @@ public abstract class TrackBlockMixin {
 
 	@Inject(method = "tick", at = @At("HEAD"), cancellable = true)
 	private void trackBlock$tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource p_60465_, CallbackInfo ci) {
+		if (pos==null)
+			return;
 		TrackPropagator.onRailAdded(level, pos, state);
 		if (!state.getValue(SHAPE)
 				.isPortal())
